@@ -1,8 +1,11 @@
 # Learning MySQL step by step
 
+此笔记乃学习何等成的分享《learning MySQL step by step》的笔记，可以在本项目的PPT目录下找到相应的PPT。
+
 #### step 1 阅读MySQL internal文档
+
 1. [MySQL internal manual](http://dev.mysql.com/doc/internals/en/index.html)
-2. Innodb architecture and internal(详见百度云盘里的PPT)
+2. Innodb architecture and internal
 	阅读源码，跟踪调试
 
 #### step 2 understanding mysql internal
@@ -29,8 +32,6 @@
 
 ####优秀的个人博客
 
-以下的这些MySQL相关的博客，都是个人订阅，并且每天关注更新的；
-有时间与经历，建议将这些博客中过去的博文，都看一遍；
 
 * Planet MySQL http://planet.mysql.com/
 * Mark Callaghan http://mysqlha.blogspot.com/
