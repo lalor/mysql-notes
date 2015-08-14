@@ -50,9 +50,49 @@
     - extra
        - https://dev.mysql.com/doc/refman/5.7/en/optimizer-hints.html
 
+* [JSON Labs Release: Effective Functional Indexes in InnoDB][5]
+
+    - Title: JSON Labs Release: Effective Functional Indexes in InnoDB
+    - Source:MySQL Server Blog
+    - Abstract: 主要可以在Generated Columns创建索引、创建virtual的Generated columns, JSON支持Generated
+    - Content:
+        - Virtual Columns in InnoDB
+        - Creating Indexes on Non-Materialized Virtual Columns
+        - Queries Using A “Functional Index”
+
+                mysql> show create table employees\G
+                *************************** 1. row ***************************
+                       Table: employees
+                Create Table: CREATE TABLE `employees` (
+                  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                  `info` json DEFAULT NULL,
+                  `name` varchar(100) GENERATED ALWAYS AS (jsn_extract(info, '$.name')) VIRTUAL,
+                  PRIMARY KEY (`id`),
+                  KEY `name` (`name`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+
+
+        - limit. There are currently some restrictions around virtual indexes, some of which will be lifted later:
+            - Primary Keys cannot contain any virtual columns
+            - You cannot create an index on a mix of virtual and non-virtual columns
+            - You cannot create a spatial or fulltext index on virtual columns (this limitation will be lifted later)
+            - A virtual index cannot be used as a foreign key
+
+* [Virtual Columns and Effective Functional Indexes in InnoDB][6]
+
+    - Title: Virtual Columns and Effective Functional Indexes in InnoDB
+    - Source:MySQL Server Blog
+    - Abstract: 第5篇博客的延生，介绍了最新的变化、更多的例子和性能测试
+    - Content:There are a few noteworthy and useful changes/additions since the initial Lab release:
+        - A single “functional index” can now be created on a combination of both virtual columns and non-virtual generated columns. That is, you can create a composite index on a mix of virtual and non-virtual generated columns.
+        - Users can create functional indexes ONLINE using the in-place algorithm so that DML statements can still be processed while the index is being created. In order to achieve that, the virtual column values used within the concurrent DML statements are computed and logged while the index is being created, and later replayed on the functional index.
+        - Users can create virtual columns based on other virtual columns, and then index them.
+        - The next improvement is less visible to user, but still worth mentioning. It is about enhancements to the purge related activities on indexed virtual columns. A new callback (WL#8841) provides a server layer function that can be called by InnoDB purge threads to compute virtual column index values. Generally this computation is done from connection threads (or sessions), however, since internal InnoDB purge threads do not correspond to connections/sessions and thus don’t have THDs or access to TABLE objects, this work was necessary in order to provide a server layer callback which enables the purge threads to make the necessary computations.
 
 [0]: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
 [1]: http://mysqlserverteam.com/improved-server-defaults-in-5-7/
 [2]: http://www.tocker.ca/2015/07/09/mysql-5-7-8-now-featuring-super_read_only-and-disabled_storage_engines.html
 [3]: http://www.tocker.ca/2015/08/03/mysql-5-7-8-mysqlpump-caveat.html
 [4]: http://mysqlserverteam.com/new-optimizer-hints-in-mysql/
+[5]: http://mysqlserverteam.com/json-labs-release-effective-functional-indexes-in-innodb/
+[6]: http://mysqlserverteam.com/virtual-columns-and-effective-functional-indexes-in-innodb/

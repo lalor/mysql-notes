@@ -1,6 +1,7 @@
 # function
 
 在sql目录下，执行`ack SQLCOM_SHOW_DATABASES`，就能大概看到如何增加一个函数的所需步骤。
+
 ### step 1 添加词法
 
 sql/lex.h修改static SYMBOL symbols[]结构体，添加一个"DISK_USAGE"这个词法
