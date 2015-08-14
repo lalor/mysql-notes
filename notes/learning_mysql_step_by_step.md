@@ -8,11 +8,11 @@
 2. Innodb architecture and internal
 	阅读源码，跟踪调试
 
-#### step 2 understanding mysql internal
+## step 2 understanding mysql internal
 
 跟踪、调试、验证。特别注意Handler和代码注释。
 
-#### step 3 跟踪MySQL每个发行版本的变更和bugs
+## step 3 跟踪MySQL每个发行版本的变更和bugs
 
 * WorkLogs
 	* MariaDB：https://mariadb.atlassian.net/secure/Dashboard.jspa
@@ -30,7 +30,7 @@
 * Release Notes
 	* http://dev.mysql.com/doc/relnotes/mysql/5.5/en/
 
-####优秀的个人博客
+##优秀的个人博客
 
 
 * Planet MySQL http://planet.mysql.com/
@@ -42,13 +42,13 @@
 * Dimitri KRAVTCHUK http://dimitrik.free.fr/blog/index.html
 * Yoshinori Matsunobu http://yoshinorimatsunobu.blogspot.com/
 
-####业界好的会议
+##业界好的会议
 
 * perconal live
 * fosdem
 * MySQL connect
 
-####不错的书
+##不错的书
 
 
 * MySQL. 《MySQL Reference Manual》
@@ -60,3 +60,7 @@
 * Steve Adams. 《Oracle8i Internal Services for Waits, Latches, Locks, and Memory》
 * Oracle. 《Oracle Data Server Internals：Oracle DSI》
 * 姜承尧. 《MySQL技术内幕：InnoDB存储引擎》
+
+**总结:**
+
+会议、书、官方文档、release notes和优秀博客。总之，肯下工夫最重要。
