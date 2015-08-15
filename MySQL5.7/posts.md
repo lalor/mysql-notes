@@ -2,15 +2,13 @@
 
 * [MySQL 5.7 Release Notes][0]
 
-    - Title:MySQL 5.7 Release Notes
-    - Source:dev.mysql.com
-    - Abstract:MySQL 5.7各个版本的release note
+    - Source: dev.mysql.com
+    - Abstract: MySQL 5.7各个版本的release note
 
 * [Improved Server Defaults in 5.7][1]
 
-    - Title:Improved Server Defaults in 5.7
-    - Source:MySQL Server Blog
-    - Abstract:介绍了MySQL 5.7中，默认参数配置的改变，涉及到复制、InnoDB、Performance_Schema、安全性、Runtime and General Improvements和优化器。
+    - Source: MySQL Server Blog
+    - Abstract: 介绍了MySQL 5.7中，默认参数配置的改变，涉及到复制、InnoDB、Performance_Schema、安全性、Runtime and General Improvements和优化器。
     - Content
         * Enable Simplified GTID recovery by default
         * Set ROW based binary log format by default
@@ -21,22 +19,19 @@
 
 * [Now featuring super_read_only and disabled_storage_engines][2]
 
-    - Title:Now featuring super_read_only and disabled_storage_engines
-    - Source:Morgan Tocker - MySQL Community Manager
+    - Source: Morgan Tocker - MySQL Community Manager
     - Abstract: 引入了两个新的配置 super_read_only disabled_storage_engines
 
 
 * [MySQL 5.7.8 - mysqlpump caveat][3]
 
-    - Title:MySQL 5.7.8 - mysqlpump caveat
-    - Source:Morgan Tocker - MySQL Community Manager
-    - Abstract:介绍了一个mysqldump替换工具，提供了更多的特性，包括多线程dump、dump权限、进度展示等
+    - Source: Morgan Tocker - MySQL Community Manager
+    - Abstract: 介绍了一个mysqldump替换工具，提供了更多的特性，包括多线程dump、dump权限、进度展示等
 
 * [New Optimizer Hints in MySQL][4]
 
-    - Title:New Optimizer Hints in MySQL
-    - Source:MySQL Server Blog
-    - Abstract:执行SQL语句的时候，添加注释，以对优化器进行控制，MySQL 5.7.8增加了两个提示选项
+    - Source: MySQL Server Blog
+    - Abstract: 执行SQL语句的时候，添加注释，以对优化器进行控制，MySQL 5.7.8增加了两个提示选项
     - Content
         - SEMIJOIN, NO_SEMIJOIN — enable or disable the named semi-join strategy.
         - SUBQUERY — affects whether to use subquery materialization or IN-to-EXISTS transformations.
@@ -52,8 +47,7 @@
 
 * [JSON Labs Release: Effective Functional Indexes in InnoDB][5]
 
-    - Title: JSON Labs Release: Effective Functional Indexes in InnoDB
-    - Source:MySQL Server Blog
+    - Source: MySQL Server Blog
     - Abstract: 主要可以在Generated Columns创建索引、创建virtual的Generated columns, JSON支持Generated
     - Content:
         - Virtual Columns in InnoDB
@@ -80,9 +74,8 @@
 
 * [Virtual Columns and Effective Functional Indexes in InnoDB][6]
 
-    - Title: Virtual Columns and Effective Functional Indexes in InnoDB
     - Source:MySQL Server Blog
-    - Abstract: 第5篇博客的延生，介绍了最新的变化、更多的例子和性能测试
+    - Abstract: 上一篇博客的延生，介绍了最新的变化、更多的例子和性能测试
     - Content:There are a few noteworthy and useful changes/additions since the initial Lab release:
         - A single “functional index” can now be created on a combination of both virtual columns and non-virtual generated columns. That is, you can create a composite index on a mix of virtual and non-virtual generated columns.
         - Users can create functional indexes ONLINE using the in-place algorithm so that DML statements can still be processed while the index is being created. In order to achieve that, the virtual column values used within the concurrent DML statements are computed and logged while the index is being created, and later replayed on the functional index.
@@ -91,7 +84,6 @@
 
 * [Resizing the InnoDB Buffer Pool Online][7]
 
-    - Title:Resizing the InnoDB Buffer Pool Online
     - Source: MySQL server Block
     - Abstract: 介绍了MySQL 5.7 动态调整buffer pool的用法、有可能在调整buffer pool的时候会卡一下，卡多久取决于resize的关键路径（操作系统分配、回收内存的速度）以及shrink buffer pool需要做的事情，此外，调整buffer pool的过程中会关闭AHI
     - Content: You can now use the "SET GLOBAL innodb_buffer_pool_size = xxxx" command which causes a resizing job to begin in background.
