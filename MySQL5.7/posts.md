@@ -1,11 +1,11 @@
 # What's new in MySQL 5.7
 
-* [MySQL 5.7 Release Notes][0]
+- [MySQL 5.7 Release Notes][0]
 
     - Source: dev.mysql.com
     - Abstract: MySQL 5.7各个版本的release note
 
-* [Improved Server Defaults in 5.7][1]
+- [Improved Server Defaults in 5.7][1]
 
     - Source: MySQL Server Blog
     - Abstract: 介绍了MySQL 5.7中，默认参数配置的改变，涉及到复制、InnoDB、Performance_Schema、安全性、Runtime and General Improvements和优化器。
@@ -17,18 +17,18 @@
         * Lower default slave_net_timeout
         * Deprecate @@session.gtid_executed
 
-* [Now featuring super_read_only and disabled_storage_engines][2]
+- [Now featuring super_read_only and disabled_storage_engines][2]
 
     - Source: Morgan Tocker - MySQL Community Manager
     - Abstract: 引入了两个新的配置 super_read_only disabled_storage_engines
 
 
-* [MySQL 5.7.8 - mysqlpump caveat][3]
+- [MySQL 5.7.8 - mysqlpump caveat][3]
 
     - Source: Morgan Tocker - MySQL Community Manager
     - Abstract: 介绍了一个mysqldump替换工具，提供了更多的特性，包括多线程dump、dump权限、进度展示等
 
-* [New Optimizer Hints in MySQL][4]
+- [New Optimizer Hints in MySQL][4]
 
     - Source: MySQL Server Blog
     - Abstract: 执行SQL语句的时候，添加注释，以对优化器进行控制，MySQL 5.7.8增加了两个提示选项
@@ -45,7 +45,7 @@
     - extra
        - https://dev.mysql.com/doc/refman/5.7/en/optimizer-hints.html
 
-* [JSON Labs Release: Effective Functional Indexes in InnoDB][5]
+- [JSON Labs Release: Effective Functional Indexes in InnoDB][5]
 
     - Source: MySQL Server Blog
     - Abstract: 主要可以在Generated Columns创建索引、创建virtual的Generated columns, JSON支持Generated
@@ -72,7 +72,7 @@
             - You cannot create a spatial or fulltext index on virtual columns (this limitation will be lifted later)
             - A virtual index cannot be used as a foreign key
 
-* [Virtual Columns and Effective Functional Indexes in InnoDB][6]
+- [Virtual Columns and Effective Functional Indexes in InnoDB][6]
 
     - Source:MySQL Server Blog
     - Abstract: 上一篇博客的延生，介绍了最新的变化、更多的例子和性能测试
@@ -82,9 +82,9 @@
         - Users can create virtual columns based on other virtual columns, and then index them.
         - The next improvement is less visible to user, but still worth mentioning. It is about enhancements to the purge related activities on indexed virtual columns. A new callback (WL#8841) provides a server layer function that can be called by InnoDB purge threads to compute virtual column index values. Generally this computation is done from connection threads (or sessions), however, since internal InnoDB purge threads do not correspond to connections/sessions and thus don’t have THDs or access to TABLE objects, this work was necessary in order to provide a server layer callback which enables the purge threads to make the necessary computations.
 
-* [Resizing the InnoDB Buffer Pool Online][7]
+- [Resizing the InnoDB Buffer Pool Online][7]
 
-    - Source: MySQL server Block
+    - Source: MySQL server Blog
     - Abstract: 介绍了MySQL 5.7 动态调整buffer pool的用法、有可能在调整buffer pool的时候会卡一下，卡多久取决于resize的关键路径（操作系统分配、回收内存的速度）以及shrink buffer pool需要做的事情，此外，调整buffer pool的过程中会关闭AHI
     - Content: You can now use the "SET GLOBAL innodb_buffer_pool_size = xxxx" command which causes a resizing job to begin in background.
     - extra
@@ -100,6 +100,17 @@
 
         - During the buffer pool resizing process the adaptive hash index (AHI) is disabled.
 
+- [Building a Better CREATE USER Command][8]
+
+    - Source: MySQL Server Blog
+    - Abstract: 介绍了MySQL 5.7 对`create user`命令的改进，简单地说，就是把以前只能通过grant限制的功能，移到了create user命令里。
+    - Content
+        * No way to set both authentication plugin and password
+        * No way to disable a user
+        * No way to define user resource limitations
+        * No way to set a non-default password expiration policy
+        * No way to require SSL/x509
+
 [0]: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
 [1]: http://mysqlserverteam.com/improved-server-defaults-in-5-7/
 [2]: http://www.tocker.ca/2015/07/09/mysql-5-7-8-now-featuring-super_read_only-and-disabled_storage_engines.html
@@ -108,3 +119,4 @@
 [5]: http://mysqlserverteam.com/json-labs-release-effective-functional-indexes-in-innodb/
 [6]: http://mysqlserverteam.com/virtual-columns-and-effective-functional-indexes-in-innodb/
 [7]: http://mysqlserverteam.com/resizing-buffer-pool-online/
+[8]: http://mysqlserverteam.com/building-a-better-create-user-command/
