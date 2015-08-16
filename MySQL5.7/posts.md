@@ -111,6 +111,13 @@
         * No way to set a non-default password expiration policy
         * No way to require SSL/x509
 
+- [MySQL 5.7 Labs — Inserting, Updating, and Deleting Records via HTTP][9]
+
+    - Source: MySQL Server Blog
+    - Abstract: 
+
+
+
 [0]: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
 [1]: http://mysqlserverteam.com/improved-server-defaults-in-5-7/
 [2]: http://www.tocker.ca/2015/07/09/mysql-5-7-8-now-featuring-super_read_only-and-disabled_storage_engines.html
@@ -120,3 +127,4 @@
 [6]: http://mysqlserverteam.com/virtual-columns-and-effective-functional-indexes-in-innodb/
 [7]: http://mysqlserverteam.com/resizing-buffer-pool-online/
 [8]: http://mysqlserverteam.com/building-a-better-create-user-command/
+[9]: http://mysqlserverteam.com/mysql-5-7-labs-inserting-updating-and-deleting-records-via-http/
