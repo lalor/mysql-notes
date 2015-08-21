@@ -5,6 +5,9 @@
 ### Preface and Legal Notice
 ### 1 A Guided Tour Of The MySQL Source Code
 
+简单介绍了MySQL的代码结构和重要的目录，其中，比较重要的是1.9节的`The Skeleton
+of the Server Code`，介绍了一条SQL语句从发起到执行，都经历了哪些步骤。
+
 ### 2 Coding Guidelines
 
 ### 3 Reusable Classes and Templates
