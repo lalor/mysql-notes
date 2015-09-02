@@ -1,0 +1,29 @@
+# MySQL Test Suite
+
+* run `make test` from the source root directory
+* run `./mysql-test-run.pl` from the mysql-test directory
+* run `./mysql-test-run.pl test_name` for an individual test case
+* `./mysql-test-run.pl --suite=suite_name`
+* `--parallel=N` Run tests in N parallel threads (default=1) Use parallel=auto for auto-setting of N
+
+<http://dev.mysql.com/doc/refman/5.6/en/mysql-test-suite.html>
+
+
+# MySQL Test Framework Manual
+
+<http://dev.mysql.com/doc/mysqltest/en/index.html>
+
+- This document describes the components of the MySQL test framework,
+- how the test programs work,
+- and the language used for writing test cases.
+- It also provides a tutorial for developing test cases
+- and executing them.
+
+Within the mysql-test directory, test case input files and result files are stored in the t and r directories, respectively. The input and result files have the same basename, which is the test name, but have extensions of .test and .result, respectively. For example, for a test named “decimal,” the input and result files are mysql-test/t/decimal.test and mysql-test/r/decimal.result.
+
+#  How to writing a test
+- [mysqltest Language Reference][1]
+- [Writing Test Case][2]
+
+[1]: http://dev.mysql.com/doc/mysqltest/2.0/en/mysqltest-reference.html
+[2]: http://dev.mysql.com/doc/mysqltest/2.0/en/writing-tests.html
