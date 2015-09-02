@@ -29,8 +29,12 @@ Within the mysql-test directory, test case input files and result files are stor
 - [mysqltest Language Reference][1]
 - [Writing Test Case][2]
 
+简单地说，生成一个测试的步骤如下：
 
-* prepare file
+1. 在t目录下，生成一个name.test文件，写入一些SQL语句
+2. 执行`./mtr --record name`，产生输出，查看输出是否与自己预期的一致，如果不一致，则调整test文件或者修改MySQL代码，最后，将result文件保留，作为后期测试的正确结果，如果后期执行测试的结果与该result文件中的内容不一样，则说明某个地方有错误。
+
+#### prepare file
 
 Use the following procedure to write a new test case. In the examples, test_name represents the name of the test case. It is assumed here that you'll be using a development source tree, so that when you create a new test case, you can commit the files associated with it to the source repository for others to use.
 
@@ -65,7 +69,7 @@ You can also run the newly created test case as part of the entire suite:
 
     shell> ./mysql-test-run.pl
 
-* Sample Test Case
+#### Sample Test Case
 
 <http://dev.mysql.com/doc/mysqltest/2.0/en/writing-tests-sample-test-case.html>
 
