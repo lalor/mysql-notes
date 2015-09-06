@@ -28,6 +28,11 @@
     - Source: Morgan Tocker - MySQL Community Manager
     - Abstract: 介绍了一个mysqldump替换工具，提供了更多的特性，包括多线程dump、dump权限、进度展示等
 
+- [Introducing mysqlpump][10]
+
+    - Source: MySQL Server Blog
+    - Abstract: 介绍了mysqlpump的使用方法
+
 - [New Optimizer Hints in MySQL][4]
 
     - Source: MySQL Server Blog
@@ -114,7 +119,7 @@
 - [MySQL 5.7 Labs — Inserting, Updating, and Deleting Records via HTTP][9]
 
     - Source: MySQL Server Blog
-    - Abstract: 
+    - Abstract:
 
 
 
@@ -128,3 +133,4 @@
 [7]: http://mysqlserverteam.com/resizing-buffer-pool-online/
 [8]: http://mysqlserverteam.com/building-a-better-create-user-command/
 [9]: http://mysqlserverteam.com/mysql-5-7-labs-inserting-updating-and-deleting-records-via-http/
+[10]: http://mysqlserverteam.com/introducing-mysqlpump/
