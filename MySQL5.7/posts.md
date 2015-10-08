@@ -116,6 +116,15 @@
         * No way to set a non-default password expiration policy
         * No way to require SSL/x509
 
+- [Improved ALTER USER Syntax Support in 5.7][11]
+
+    - Source: MySQL Server Blog
+    - Abstract: 介绍了MySQL 5.7 对`alter user`命令的改进
+    - Content
+        * Changing authentication plugin through ALTER USER
+        * Updating proxy user mapping without update mysql.user directly
+        * Separating account and privilege attributes. No longer do users have to resort to GRANT commands to modify account attributes, such as SSL. For backwards compatibility, such commands are still supported, but deprecated
+
 - [MySQL 5.7 Labs — Inserting, Updating, and Deleting Records via HTTP][9]
 
     - Source: MySQL Server Blog
@@ -134,3 +143,4 @@
 [8]: http://mysqlserverteam.com/building-a-better-create-user-command/
 [9]: http://mysqlserverteam.com/mysql-5-7-labs-inserting-updating-and-deleting-records-via-http/
 [10]: http://mysqlserverteam.com/introducing-mysqlpump/
+[11]: http://mysqlserverteam.com/improved-alter-user-syntax-support-in-5-7/
