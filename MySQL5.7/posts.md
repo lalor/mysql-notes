@@ -128,8 +128,35 @@
 - [MySQL 5.7 Labs — Inserting, Updating, and Deleting Records via HTTP][9]
 
     - Source: MySQL Server Blog
-    - Abstract:
 
+
+- [The MySQL SYS Schema in MySQL 5.7.7][12]
+
+    - Source: MySQL Server Blog
+    - Abstract: MySQL 5.7引入了新的系统库sys，用以对使用情况进行统计，能够显著地提高数据库的"可运维性"
+    - Content
+        * Who is taking up all the resources on my database server? (`select * from user_summary`)
+        * Which hosts are hitting my database server those most?(`show tables like 'host%'`)
+        * Which objects are accessed the most, and how?(` select * from sys.schema_table_statistics limit 5`)
+        * What statements have the highest overall latency, and what statistics did they have?(`select * from statement_analysis limit 10`)
+        * Which statements are using temporary tables on disk?(`select * from statements_with_temp_tables limit 5`)
+        * Which tables take the most space in my InnoDB buffer pool?(` select * from innodb_buffer_stats_by_table limit 10`)
+        * Where is all the memory going on my instance?(`select * from memory_global_by_current_bytes limit 10`)
+        * Which database files cause the most IO, and what kind of IO pattern do they have?(`select * from io_global_by_file_by_latency limit 10;`)
+        * Where is the time being spent the most within my instance?(`select * from waits_global_by_latency limit 20;`)
+
+- [What's New in MySQL 5.7][13]
+
+    - Source: MySQL Server Blog
+    - Abstract: 比较全面地介绍了MySQL5.7的新特性
+    - Content
+        * Performance & Scalability: Improved InnoDB scalability and temporary table performance, enabling faster online and bulk load operations, and more.
+        * JSON Support: With the newly added JSON support in MySQL, you can now combine the flexibility of NoSQL with the strength of a relational database.
+        * Replication improvements for increased availability and performance. They include multi-source replication, multi-threaded slave enhancements, online GTIDs, and enhanced semi-sync replication.
+        * Performance Schema delivering much better insights. We’ve added numerous new monitoring capabilities, reduced the footprint and overhead, and significantly improved ease of use with the new SYS Schema.
+        * Security: We are fulfilling “secure by default” requirements and many new MySQL 5.7 features will help users keep their database secure.
+        * Optimizer: We have rewritten large parts of the parser, optimizer, and cost model. This has improved maintainability, extendability, and performance.
+        * GIS: Completely new in MySQL 5.7 and including InnoDB spatial indexes, use of Boost.Geometry, along with increased completeness and standard compliance.
 
 
 [0]: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
@@ -144,3 +171,5 @@
 [9]: http://mysqlserverteam.com/mysql-5-7-labs-inserting-updating-and-deleting-records-via-http/
 [10]: http://mysqlserverteam.com/introducing-mysqlpump/
 [11]: http://mysqlserverteam.com/improved-alter-user-syntax-support-in-5-7/
+[12]: http://mysqlserverteam.com/the-mysql-sys-schema-in-mysql-5-7-7/
+[13]: http://mysqlserverteam.com/whats-new-in-mysql-5-7-generally-available/

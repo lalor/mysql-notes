@@ -12,6 +12,32 @@ patch的地址是: <http://mysql.taobao.org/index.php?title=Patch_source_code>
 
 内核月报的地址是：<http://mysql.taobao.org/monthly/>
 
+
+### MySQL内核月报2015-10
+
+<http://mysql.taobao.org/monthly/2015/10/10/>
+
+* MySQL · 引擎特性 · InnoDB 全文索引简介
+* MySQL · 特性分析 · 跟踪Metadata lock
+    介绍的并不详细，只是演示了MySQL 5.7中，可以通过performance schema来检索MDL锁阻塞情况，方便DBA来诊断问题
+* MySQL · 答疑解惑 · 索引过滤性太差引起CPU飙高分析
+    值得学习，索引过滤性很差的表现情况：语句hang住以及主机CPU耗尽。因此我们在设计表的时候，应该对业务上的数据有充分的估计，选择过滤性好的字段作为索引。**赖明星请注意：**应该学习这篇文章中，定位问题的方法。
+* PgSQL · 特性分析 · PG主备流复制机制
+* MySQL · 捉虫动态 · start slave crash 诊断分析
+    该问题在最新的MySQL版本中依然存在，可以学习这里定位问题的思路。
+* MySQL · 捉虫动态 · 删除索引导致表无法打开
+* PgSQL · 特性分析 · PostgreSQL Aurora方案与DEMO
+* TokuDB · 捉虫动态 · CREATE DATABASE 导致crash问题
+* PgSQL · 特性分析 · pg_receivexlog工具解析
+
+* MySQL · 特性分析 · MySQL权限存储与管理*
+    介绍了MySQL权限管理的存储，包括物理存储位置和缓存中的存储位置，与此同时，介绍了更新权限的过程。
+
+           以grant select on test.t1为例:
+           1. 更新系统表mysql.user，mysql.db，mysql.tables_priv；
+           2. 更新缓存acl_users，acl_dbs，column_priv_hash；
+           3.  清空acl_cache。
+
 * http://mysql.taobao.org/monthly/2015/05/
 
     - MySQL · 引擎特性 · InnoDB redo log漫游
