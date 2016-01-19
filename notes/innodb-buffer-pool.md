@@ -69,6 +69,15 @@
 * buf_read_page_low
 * buf_page_init_for_read
 
+# 不懂的地方
+* innodb_old_blocks_time
+* innodb_max_dirty_pages_pct
+* innodb_adaptive_flushing //InnoDB uses an algorithm to estimate the required rate of flushing, based on the speed of redo log generation and the current rate of flushing.
+* buf_flush_page_cleaner_thread buf0flu.c
+
+# 脏页刷新目的
+* 加快crash recovery速度，由checkpoint完成，Flush List Flush，脏页刷新列表按照  oldest_modification排序，从5.6.2开始，有专门的Page Cleaner线程负责
+* 增加内存可用buffers数量，LRU List Flush
 
 部分函数
 ----------------
