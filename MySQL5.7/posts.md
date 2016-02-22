@@ -158,6 +158,15 @@
         * Optimizer: We have rewritten large parts of the parser, optimizer, and cost model. This has improved maintainability, extendability, and performance.
         * GIS: Completely new in MySQL 5.7 and including InnoDB spatial indexes, use of Boost.Geometry, along with increased completeness and standard compliance.
 
+- [Using SYS.SESSION as an alternative to SHOW PROCESSLIST][14]
+
+    - Source: MySQL Server Blog
+    - Abstract: 演示sys.session的用法
+    - Content
+        * 作者抛砖引玉，演示了sys数据库中的session用法，主要目的还是介绍sys数据库
+        * sys数据库的类比：For Linux users I like to compare performance_schema to /proc, and SYS to vmstat.
+
+
 
 [0]: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
 [1]: http://mysqlserverteam.com/improved-server-defaults-in-5-7/
@@ -173,3 +182,4 @@
 [11]: http://mysqlserverteam.com/improved-alter-user-syntax-support-in-5-7/
 [12]: http://mysqlserverteam.com/the-mysql-sys-schema-in-mysql-5-7-7/
 [13]: http://mysqlserverteam.com/whats-new-in-mysql-5-7-generally-available/
+[14]: http://mysqlserverteam.com/using-sys-session-as-an-alternative-to-show-processlist/
